@@ -9,17 +9,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Preload hero image for faster loading -->
     <link rel="preload" as="image" href="images/image05.jpg">
 </head>
 <body>
     <nav class="glass-nav">
         <div class="logo">Hurghada with Walid</div>
-        <div class="lang-selector">
-            <button class="lang-btn active" data-target="en">🇬🇧 EN</button>
-            <button class="lang-btn" data-target="ru">🇷🇺 RU</button>
-            <button class="lang-btn" data-target="de">🇩🇪 DE</button>
-            <button class="lang-btn" data-target="zh">🇨🇳 ZH</button>
+        <div class="lang-dropdown">
+            <button class="lang-toggle" id="langToggle">
+                🌍 <span id="currentLang">EN</span>
+            </button>
+            <div class="lang-menu" id="langMenu">
+                <button class="lang-btn active" data-target="en" data-short="EN">🇬🇧 EN</button>
+                <button class="lang-btn" data-target="ru" data-short="RU">🇷🇺 RU</button>
+                <button class="lang-btn" data-target="de" data-short="DE">🇩🇪 DE</button>
+                <button class="lang-btn" data-target="zh" data-short="ZH">🇨🇳 ZH</button>
+            </div>
         </div>
         <a href="https://wa.me/201000883177" class="btn-primary small">WhatsApp</a>
     </nav>

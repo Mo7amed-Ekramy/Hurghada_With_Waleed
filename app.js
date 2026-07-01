@@ -2,6 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const langBtns = document.querySelectorAll('.lang-btn');
     const langContents = document.querySelectorAll('.lang-content');
 
+    const langToggle = document.getElementById('langToggle');
+    const langMenu = document.getElementById('langMenu');
+    const currentLangText = document.getElementById('currentLang');
+
+    if (langToggle && langMenu) {
+        langToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langMenu.classList.toggle('show');
+        });
+
+        document.addEventListener('click', () => {
+            langMenu.classList.remove('show');
+        });
+    }
+
     langBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             // Remove active class from all buttons
@@ -10,6 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
 
             const targetLang = btn.getAttribute('data-target');
+            const shortText = btn.getAttribute('data-short');
+
+            if (currentLangText && shortText) {
+                currentLangText.textContent = shortText;
+            }
 
             // Hide all language contents
             langContents.forEach(content => {

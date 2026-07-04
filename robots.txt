@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hurghada-with-waleed.vercel.app/sitemap.xml

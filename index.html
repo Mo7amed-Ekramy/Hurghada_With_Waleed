@@ -8,13 +8,56 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'self';">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
-    <title>Hurghada with Walid | Best Excursions & Tours</title>
-    <meta name="description" content="Book the best Hurghada tours: Orange Bay, Giftun Island, Desert Safari, Dolphin House. Free pickup & WhatsApp booking.">
+    <!-- SEO Meta Tags -->
+    <title>Hurghada Tours & Excursions | Orange Bay, Safari & Snorkeling</title>
+    <meta name="description" content="Book the best Hurghada excursions: Orange Bay, Giftun Island snorkeling, and Desert Safari. Get local prices, free hotel pickup, and easy WhatsApp booking.">
+    <meta name="keywords" content="Hurghada tours, Orange Bay, Giftun Island, Desert Safari, Snorkeling Hurghada, Egypt excursions">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hurghada-with-waleed.vercel.app/" />
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hurghada-with-waleed.vercel.app/">
+    <meta property="og:title" content="Hurghada Tours & Excursions | Orange Bay, Safari & Snorkeling">
+    <meta property="og:description" content="Book the best Hurghada excursions: Orange Bay, Giftun Island snorkeling, and Desert Safari. Get local prices and free hotel pickup.">
+    <meta property="og:image" content="https://hurghada-with-waleed.vercel.app/images/orange_bay.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hurghada Tours & Excursions">
+    <meta name="twitter:description" content="Book the best Hurghada excursions: Orange Bay, Giftun Island, and Desert Safari.">
+
+    <!-- Favicon (Fallback) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏝️</text></svg>">
+
+    <!-- Fonts & CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="preload" as="image" href="images/image05.jpg">
+    
+    <!-- Structured Data (JSON-LD) for Local Business / Travel Agency -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Hurghada with Walid",
+      "image": "https://hurghada-with-waleed.vercel.app/images/orange_bay.png",
+      "@id": "https://hurghada-with-waleed.vercel.app/",
+      "url": "https://hurghada-with-waleed.vercel.app/",
+      "telephone": "+201000883177",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Hurghada",
+        "addressRegion": "Red Sea Governorate",
+        "addressCountry": "EG"
+      },
+      "description": "Providing the best local tours and excursions in Hurghada, Egypt including Orange Bay, Giftun Island, and Desert Safaris."
+    }
+    </script>
 </head>
 <body>
     <nav class="glass-nav">
@@ -35,7 +78,7 @@
 
     <header class="hero" id="home">
         <div class="hero-content glass-card">
-            <h1>Best Excursions & Tours</h1>
+            <h1>Best Hurghada Excursions & Tours</h1>
             <p>Book the best Hurghada tours: Orange Bay, Giftun Island, Desert Safari, Dolphin House. Free pickup & WhatsApp booking.</p>
             <div class="hero-buttons">
                 <a href="https://wa.me/201000883177" class="btn-primary">Contact Walid on WhatsApp Now</a>
@@ -50,7 +93,7 @@
 
             <!-- Tour 1 -->
             <div class="tour-card glass-card">
-                <div class="tour-image" style="background-image: url('images/orange_bay.png');"></div>
+                <div class="tour-image" role="img" aria-label="Beautiful view of Orange Bay Island in Hurghada" style="background-image: url('images/orange_bay.png');"></div>
                 <div class="tour-details">
                     <h3>Orange Bay Island</h3>
                     <div class="tour-meta">
@@ -78,7 +121,7 @@
 
             <!-- Tour 2 -->
             <div class="tour-card glass-card reverse">
-                <div class="tour-image" style="background-image: url('images/desert_safari.png');"></div>
+                <div class="tour-image" role="img" aria-label="Quad biking in the Hurghada Desert Safari" style="background-image: url('images/desert_safari.png');"></div>
                 <div class="tour-details">
                     <h3>Super Desert Safari</h3>
                     <div class="tour-meta">
@@ -106,7 +149,7 @@
 
             <!-- Tour 3 -->
             <div class="tour-card glass-card">
-                <div class="tour-image" style="background-image: url('images/giftun_island.png');"></div>
+                <div class="tour-image" role="img" aria-label="Crystal clear waters of Giftun Island and Mahmya" style="background-image: url('images/giftun_island.png');"></div>
                 <div class="tour-details">
                     <h3>Giftun Island (Mahmya & National Park)</h3>
                     <div class="tour-meta">
@@ -134,7 +177,7 @@
 
             <!-- Tour 4 -->
             <div class="tour-card glass-card reverse">
-                <div class="tour-image" style="background-image: url('images/glass_boat.png');"></div>
+                <div class="tour-image" role="img" aria-label="Red Sea coral reefs seen from a Glass Bottom Boat" style="background-image: url('images/glass_boat.png');"></div>
                 <div class="tour-details">
                     <h3>Glass Boat</h3>
                     <div class="tour-meta">

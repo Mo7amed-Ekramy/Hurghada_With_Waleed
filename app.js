@@ -58,10 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Simple fade-in animation on scroll
+    // Simple fade-in animation on scroll and image lazy loading
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '50px', // start loading slightly before they enter the viewport
         threshold: 0.1
     };
 
@@ -70,6 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = 1;
                 entry.target.style.transform = 'translateY(0)';
+                
+                // Lazy-load background image if available
+                const lazyBg = entry.target.querySelector('.lazy-bg');
+                if (lazyBg) {
+                    const bgUrl = lazyBg.getAttribute('data-bg');
+                    if (bgUrl) {
+                        lazyBg.style.backgroundImage = `url('${bgUrl}')`;
+                        lazyBg.classList.remove('lazy-bg');
+                    }
+                }
+                
                 observer.unobserve(entry.target);
             }
         });

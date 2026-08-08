@@ -348,8 +348,11 @@ div.lang-content {
     text-align: center;
 }
 
-[dir="rtl"] .footer-content {
-    text-align: center;
+.footer-content, 
+.footer-content p, 
+.footer-content small, 
+.footer-content .lang-content {
+    text-align: center !important;
 }
 
 /* Footer */

@@ -17,32 +17,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function setLanguage(targetLang, shortText) {
+        langBtns.forEach(btn => {
+            if (btn.getAttribute('data-target') === targetLang) {
+                btn.classList.add('active');
+                if (!shortText) shortText = btn.getAttribute('data-short');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        if (currentLangText && shortText) {
+            currentLangText.textContent = shortText;
+        }
+
+        // Set document direction for RTL (Arabic)
+        if (targetLang === 'ar') {
+            document.documentElement.dir = 'rtl';
+            document.documentElement.lang = 'ar';
+        } else {
+            document.documentElement.dir = 'ltr';
+            document.documentElement.lang = targetLang;
+        }
+
+        // Hide all language contents and activate target language contents
+        const allLangContents = document.querySelectorAll('.lang-content');
+        allLangContents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        const targetContents = document.querySelectorAll(`.lang-content[data-lang="${targetLang}"]`);
+        targetContents.forEach(content => {
+            content.classList.add('active');
+        });
+
+        try {
+            localStorage.setItem('preferredLang', targetLang);
+        } catch (e) {}
+    }
+
     langBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
-            langBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
-            btn.classList.add('active');
-
             const targetLang = btn.getAttribute('data-target');
             const shortText = btn.getAttribute('data-short');
-
-            if (currentLangText && shortText) {
-                currentLangText.textContent = shortText;
-            }
-
-            // Hide all language contents
-            langContents.forEach(content => {
-                content.classList.remove('active');
-            });
-
-            // Show target language content in each tour card
-            const targetContents = document.querySelectorAll(`.lang-content[data-lang="${targetLang}"]`);
-            targetContents.forEach(content => {
-                content.classList.add('active');
-            });
+            setLanguage(targetLang, shortText);
         });
     });
+
+    // Restore user's preferred language on load
+    try {
+        const savedLang = localStorage.getItem('preferredLang');
+        if (savedLang) {
+            const savedBtn = document.querySelector(`.lang-btn[data-target="${savedLang}"]`);
+            if (savedBtn) {
+                setLanguage(savedLang, savedBtn.getAttribute('data-short'));
+            }
+        }
+    } catch (e) {}
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
